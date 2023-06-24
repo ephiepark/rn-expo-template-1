@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "rn-expo-template",
-    "slug": "rn-expo-template",
+    "slug": "rn-expo-template-1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,6 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "scheme": "yourscheme",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -25,6 +26,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5cff5470-8ced-4561-abd4-a7f0a7184173"
+      }
+    },
+    "owner": "ephiepark"
   }
 }

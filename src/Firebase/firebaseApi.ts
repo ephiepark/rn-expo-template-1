@@ -4,6 +4,13 @@ import {
   Auth,
   getAuth,
   GoogleAuthProvider,
+  NextOrObserver,
+  onAuthStateChanged,
+  signInWithCredential,
+  signOut,
+  Unsubscribe,
+  User,
+
 } from "firebase/auth";
 import { Firestore, getFirestore, } from "firebase/firestore";
 import { FirebaseStorage, getStorage, } from "firebase/storage";
@@ -24,4 +31,18 @@ export default class FirebaseApi {
     this.firestore = getFirestore(this.app);
     this.storage = getStorage(this.app);
   }
+
+  onAuthStateChanged = (nextOrObserver: NextOrObserver<User>): Unsubscribe => {
+    return onAuthStateChanged(this.auth, nextOrObserver);
+  };
+
+  signInWithGoogleCredential = (accessToken: string) => {
+    const credential = GoogleAuthProvider.credential(null, accessToken);
+    return signInWithCredential(this.auth, credential);
+  };
+
+  signOut = () => {
+    return signOut(this.auth);
+  }
+
 };
