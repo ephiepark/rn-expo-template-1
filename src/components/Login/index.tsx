@@ -24,6 +24,7 @@ const LoginBase = (props: {} & WithFirebaseApiProps) => {
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <Button title="Google Login" onPress={() => { promptAsync(); }} />
+      <Button title="Sign out" onPress={() => { props.firebaseApi.signOut(); }} />
       <StatusBar style="auto" />
     </View>
   );
